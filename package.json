@@ -1,0 +1,28 @@
+{
+  "name": "data-replacer",
+  "version": "1.0.0",
+  "description": "A javascript string replacer",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SmaugDev/data-replacer.git"
+  },
+  "keywords": [
+    "data-replacer",
+    "replacer",
+    "replace",
+    "string"
+  ],
+  "author": "Smaug#6739",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SmaugDev/data-replacer/issues"
+  },
+  "homepage": "https://github.com/SmaugDev/data-replacer#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}

@@ -10,33 +10,31 @@ import { IOptions, IReplace } from './typescript/interfaces';
  */
 class DataReplacer {
 	caseInsensitive: boolean;
-	skip: number;
-	maxReplaces: number;
+	required: boolean;
+	multipleReplaces: boolean;
 	constructor(options: IOptions) {
-		this.caseInsensitive = options.caseInsensitive;
-		this.skip = options.skip;
-		this.maxReplaces = options.maxReplaces;
-
+		this.caseInsensitive = options.caseInsensitive || true;
+		this.required = options.required || false;
+		this.multipleReplaces = options.multipleReplaces || false;
 	}
 	replace(text: string, replace: IReplace) {
-		const keys = Object.keys(replace);
-		let skipOptions: number = this.skip;
+		this.checkTypes(text, replace);
+		const keys: string[] = Object.keys(replace);
+		const replaceFlags = [];
+		if (this.multipleReplaces) replaceFlags.push('g');
+		if (this.caseInsensitive) replaceFlags.push('i');
+
 		for (const key of keys) {
-			if (this.checkIncludes(text, replace[key]))
-				if (skipOptions) {
-					skipOptions = skipOptions - 1;
-					continue;
-				}
-			// const newText = text.replace()
+			if (this.required && !text.includes(key)) throw new Error(`Missing word ${key} in text.`);
+			const regex = new RegExp(key, replaceFlags.join(''));
+			text = text.replace(regex, replace[key]);
 		}
+		return text;
 	}
-	private checkIncludes(text: string, word: string) {
-		if (this.caseInsensitive) {
-			if (text.toLocaleLowerCase().includes(word)) return true;
-			return false;
-		} else {
-			if (text.includes(word)) return true;
-			return false;
-		}
+	checkTypes(text: string, replace: IReplace) {
+		if (!text || typeof text !== 'string') throw new TypeError(`text must be non-empty string.`);
+		if (!replace || typeof replace !== 'object') throw new TypeError(`replace must be an object.`);
 	}
 }
+
+export { DataReplacer }
