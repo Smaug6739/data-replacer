@@ -13,16 +13,16 @@ This module makes it easier to replace words in a string.
 | required         | boolean | ✓        | false   | Throw an error if string missing field |
 | multipleReplaces | boolean | ✓        | true    | Multiple words replacement             |
 
-### replace
+## replace
 
 Replace word(s) in a string.
 
-#### Params
+Params
 
 - text : The text to replace. (`string`)
 - replace : The object with the string to be replaced in key and the new value in value. (`Object`)
 
-#### Return
+Return
 
 The text with the replaced values. (`string`)
 
