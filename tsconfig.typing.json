@@ -1,0 +1,14 @@
+  
+{
+	// Change this to match your project
+	"include": [
+		"src/**/*"
+	],
+	"compilerOptions": {
+		"target": "ES2020",
+		"allowJs": true,
+		"declaration": true,
+		"emitDeclarationOnly": true,
+		"outDir": "typing"
+	}
+}

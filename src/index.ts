@@ -15,7 +15,7 @@ class DataReplacer {
 	constructor(options: IOptions) {
 		this.caseInsensitive = options.caseInsensitive || true;
 		this.required = options.required || false;
-		this.multipleReplaces = options.multipleReplaces || false;
+		this.multipleReplaces = options.multipleReplaces || true;
 	}
 	replace(text: string, replace: IReplace) {
 		this.checkTypes(text, replace);
