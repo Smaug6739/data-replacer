@@ -1,7 +1,7 @@
 "use strict";
 /**
  * Replacer
- * github.com/SmaugDev/replacer
+ * github.com/SmaugDev/data-replacer
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DataReplacer = void 0;
@@ -12,7 +12,7 @@ class DataReplacer {
     constructor(options) {
         this.caseInsensitive = options.caseInsensitive || true;
         this.required = options.required || false;
-        this.multipleReplaces = options.multipleReplaces || false;
+        this.multipleReplaces = options.multipleReplaces || true;
     }
     replace(text, replace) {
         this.checkTypes(text, replace);

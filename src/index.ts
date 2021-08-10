@@ -1,6 +1,6 @@
 /**
  * Replacer
- * github.com/SmaugDev/replacer
+ * github.com/SmaugDev/data-replacer
  */
 
 import { IOptions, IReplace } from './typescript/interfaces';
