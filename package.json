@@ -1,6 +1,6 @@
 {
   "name": "data-replacer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A javascript string replacer",
   "main": "dist/index.js",
   "types": "typing/index.d.ts",
